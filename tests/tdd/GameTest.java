@@ -17,6 +17,9 @@ class GameTest extends Game {
 	
 	@Test
 	void test1() {
+		for (int i = 0; i < 20; i ++) {
+			game.roll(0);
+		}
 		assertTrue(game.score() == 0);
 	}
 
