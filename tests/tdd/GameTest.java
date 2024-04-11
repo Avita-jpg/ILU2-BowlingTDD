@@ -52,7 +52,32 @@ class GameTest extends Game {
 		assertTrue(game.score() == 24);
 	}
 	
-	
+	@Test
+	void test4() {
+		game.roll(1);
+		game.roll(2);
+		game.roll(10);
+		game.roll(0);
+		game.roll(10);
+		game.roll(4);
+		game.roll(2);
+		game.roll(0);
+		game.roll(10);
+		game.roll(6);
+		game.roll(2);
+		game.roll(0);
+		game.roll(10);
+		game.roll(6);
+		game.roll(4);
+		game.roll(8);
+		game.roll(2);
+		game.roll(2);
+		game.roll(7);
+		
+		
+		System.out.println(game.score());
+		assertTrue(game.score() == 122);
+	}
 	
 
 	
