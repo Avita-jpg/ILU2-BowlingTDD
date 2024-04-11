@@ -2,7 +2,7 @@ package tdd;
 
 public class Game {
 
-	public void roll(int nb) {
+	public void roll() {
 		return; 
 	}
 	
