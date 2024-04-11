@@ -23,6 +23,7 @@ class GameTest extends Game {
 		for (int i = 0; i < 10; i ++) {
 			game.roll(2);
 		}
+		System.out.println(game.score());
 		assertTrue(game.score() == 30);
 	}
 	
@@ -37,5 +38,23 @@ class GameTest extends Game {
 		System.out.println(game.score());
 		assertTrue(game.score() == 18);
 	}
+	
+	@Test
+	void test3() {
+		game.roll(10);
+		game.roll(3);
+		game.roll(4);
+		
+		for (int i = 0; i < 16; i ++) {
+			game.roll(0);
+		}
+		System.out.println(game.score());
+		assertTrue(game.score() == 24);
+	}
+	
+	
+	
+
+	
 
 }

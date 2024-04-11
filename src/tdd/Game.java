@@ -8,7 +8,6 @@ public class Game {
 	public void roll(int nb) {
 		scores[numRoll] = nb;
 		numRoll++;
-		
 	}
 	
 	public int score() {
@@ -18,8 +17,12 @@ public class Game {
 			if (i > 0 && (scores[i-1] + scores[i]) == 10) {
 				score += 4;
 			}
+			if (scores[i] == 10) {
+				score += 7;
+			}
 		}
 		return score;
 	}
+	
 	
 }
