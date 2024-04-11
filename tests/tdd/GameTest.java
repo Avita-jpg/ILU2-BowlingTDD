@@ -25,5 +25,17 @@ class GameTest extends Game {
 		}
 		assertTrue(game.score() == 30);
 	}
+	
+	@Test
+	void test2() {
+		game.roll(7);
+		game.roll(3);
+		game.roll(4);
+		for (int i = 0; i < 17; i ++) {
+			game.roll(0);
+		}
+		System.out.println(game.score());
+		assertTrue(game.score() == 18);
+	}
 
 }
