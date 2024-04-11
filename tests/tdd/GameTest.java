@@ -17,10 +17,13 @@ class GameTest extends Game {
 	
 	@Test
 	void test1() {
-		for (int i = 0; i < 20; i ++) {
+		for (int i = 0; i < 10; i ++) {
 			game.roll(1);
 		}
-		assertTrue(game.score() == 20);
+		for (int i = 0; i < 10; i ++) {
+			game.roll(2);
+		}
+		assertTrue(game.score() == 30);
 	}
 
 }
