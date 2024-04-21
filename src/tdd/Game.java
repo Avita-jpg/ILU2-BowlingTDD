@@ -1,46 +1,28 @@
 package tdd;
 
 public class Game {
-
-	private int[][] quilles = new int[100][2];
-	private int numTour = 0;
-	private int numRollDansTour = 0;
-
-	public void roll(int nb) {
-		quilles[numTour][numRollDansTour] = nb;
-		if (numRollDansTour == 1) {
-			numTour++;
-			numRollDansTour = 0;
-		}
-		else if (nb == 10 && numRollDansTour == 0) {
-			quilles[numTour][numRollDansTour+1] = 0;
-			numTour++;
-		}
-		else {
-			numRollDansTour = 1;
-		}
-	}
 	
+	private int[] scores = new int[100];
+	private int numRoll = 0;
+	
+	public void roll(int nb) {
+		scores[numRoll] = nb;
+		numRoll++;
+	}
+
 	public int score() {
 		int score = 0;
-		for (int i = 0; i < numTour; i++) {
-			for (int j = 0; j < numRollDansTour; j++) {
-				score += quilles[i][j];
+		for (int i = 0; i < numRoll; i++) {
+			score += scores[i];
+			if (scores[i] == 10) {
+				score += 7;
 			}
-			
-			
-			
-			
-//			if (i > 0 && (quilles[i-1] + quilles[i]) == 10) {
-//				score += quilles[i+1];
-//			}
-//			if (quilles[i] == 10) {
-//				score += (quilles[i+1] + quilles[i+2]);
-//			}
-			
+			else {
+				if (i > 0 && scores[i-1] != 10 &&(scores[i-1] + scores[i]) == 10)
+					score += 4;
+			}
 		}
 		return score;
 	}
-	
 	
 }
